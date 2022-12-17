@@ -1,7 +1,7 @@
 # PyAbstractDataType
 A simple library that adds [ADTs](https://en.wikipedia.org/wiki/Abstract_data_type) to Python.
 
-[Source Code](./src/adt/__init__.py)
+[Source Code](https://github.com/angelcaru/pyabstractdatatype/blob/main/src/adt/__init__.py)
 
 ## Documentation
 Basic usage:
@@ -41,4 +41,4 @@ ValueError: wtf
 ```
 
 ## Examples
-See [example.py](./example.py).
+See [example.py](https://github.com/angelcaru/pyabstractdatatype/blob/main/example.py).
