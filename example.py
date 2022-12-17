@@ -1,6 +1,6 @@
 #!/bin/env python3
 
-from src.adt import adt
+from adt import adt
 
 @adt
 class Op:
@@ -35,11 +35,14 @@ def main():
     for op in ops:
         print(f"{op} = {op.calculate()}")
     
+    print()
+    
     assert Op.Add(1, 1) == Op.Add(1, 1)
     assert Op.Add(1, 1) != Op.Add(1, 2)
     assert Op.Divide(1, 1) != Op.Add(1, 1)
     assert Op.Add(1, 5) != Op.Negate(1)
 
+    # Should raise error (Op is immutable)
     op1.arg0 = 1
 
     print(f"{op1} = {op1.calculate()}")
