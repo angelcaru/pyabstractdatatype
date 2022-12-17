@@ -1,5 +1,5 @@
 [project]
-name = "pyadt"
+name = "pyabstractdatatype"
 version = "0.0.1"
 description = "Abstract Data Types for Python"
 readme = "README.md"
