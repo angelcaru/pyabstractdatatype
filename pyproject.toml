@@ -40,7 +40,6 @@ dependencies = []
 [project.urls]  # Optional
 "Source Code" = "https://github.com/angelcaru/pyadt"
 "Issues" = "https://github.com/angelcaru/pyadt/issues"
-"Be Ignored" = "mailto:angelcaru10+pyadt@gmail.com"
 
 [tool.setuptools]
 package-data = {}
