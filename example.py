@@ -3,7 +3,7 @@
 from src.adt import adt
 
 @adt
-class Operation:
+class Op:
     Add: (int, int)
     Subtract: (int, int)
     Multiply: (int, int)
@@ -11,32 +11,38 @@ class Operation:
     Negate: (int)
 
     def calculate(self) -> int:
-        Add, Subtract, Multiply, Divide, Negate = Operation.variants
         match self:
-            case Add(a, b):
+            case Op.Add(a, b):
                 return a + b
-            case Subtract(a, b):
+            case Op.Subtract(a, b):
                 return a - b
-            case Multiply(a, b):
+            case Op.Multiply(a, b):
                 return a * b
-            case Divide(a, b):
+            case Op.Divide(a, b):
                 return a // b
-            case Negate(x):
+            case Op.Negate(x):
                 return -x
 
 def main():
-    Add, Subtract, Multiply, Divide, Negate = Operation.variants
-
-    op1 = Add(34, 35)
-    op2 = Subtract(100, 31)
-    op3 = Multiply(23, 3)
-    op4 = Divide(207, 3)
-    op5 = Negate(-69)
+    op1 = Op.Add(34, 35)
+    op2 = Op.Subtract(100, 31)
+    op3 = Op.Multiply(23, 3)
+    op4 = Op.Divide(207, 3)
+    op5 = Op.Negate(-69)
 
     ops = op1, op2, op3, op4, op5
 
     for op in ops:
         print(f"{op} = {op.calculate()}")
+    
+    assert Op.Add(1, 1) == Op.Add(1, 1)
+    assert Op.Add(1, 1) != Op.Add(1, 2)
+    assert Op.Divide(1, 1) != Op.Add(1, 1)
+    assert Op.Add(1, 5) != Op.Negate(1)
+
+    op1.arg0 = 1
+
+    print(f"{op1} = {op1.calculate()}")
 
 if __name__ == "__main__":
     main()
