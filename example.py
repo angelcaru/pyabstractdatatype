@@ -1,12 +1,14 @@
-from adt import ADT
+#!/bin/env python3
 
-@ADT
+from src.adt import adt
+
+@adt
 class Operation:
-    Add = (int, int)
-    Subtract = (int, int)
-    Multiply = (int, int)
-    Divide = (int, int)
-    Negate = (int)
+    Add: (int, int)
+    Subtract: (int, int)
+    Multiply: (int, int)
+    Divide: (int, int)
+    Negate: (int)
 
     def calculate(self) -> int:
         Add, Subtract, Multiply, Divide, Negate = Operation.variants
@@ -34,7 +36,7 @@ def main():
     ops = op1, op2, op3, op4, op5
 
     for op in ops:
-        print(op.calculate())
+        print(f"{op} = {op.calculate()}")
 
 if __name__ == "__main__":
-    pass
+    main()
